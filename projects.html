@@ -10,7 +10,9 @@
 <body>
 
     <nav id="navbar">
-    <h2>kan1</h2>
+    <a href="index.html" class="nav-logo">
+    <img src="./logo.png" alt="Seb Canillas Logo">
+</a>
 
     <button class="hamburger" id="hamburger">
         ☰
@@ -32,7 +34,7 @@
         <h2>Software & Hardware Projects</h2>
         <div class="grid-container">
 
-            <a class="card project-link-card" href="./project-docs/EEE 121 SP2.pdf" data-doc-title="Maze Generation System Documentation">
+            <a class="card project-link-card" href="./project-docs/EEE 121 SP2.pdf" target="_blank" data-doc-title="Maze Generation System Documentation">
                 <div class="project-photo" style="background-image: url('./project-images/EEE 121 SP2.png');"></div>
                 <h3>Maze Generation System</h3>
                 <h4>C++ Data Structures & Algorithms</h4>
@@ -50,7 +52,7 @@
                 <span class="document-link-label">Open Documentation</span>
             </a>
             
-            <a class="card project-link-card" href="./project-docs/EEE 138 DP.pdf" data-doc-title="Class AB Audio Amplifier Documentation">
+            <a class="card project-link-card" href="./project-docs/EEE 138 DP.pdf" target="_blank" data-doc-title="Class AB Audio Amplifier Documentation">
                 <div class="project-photo" style="background-image: url('./project-images/EEE 138 DP.png');"></div>
                 <h3>Class AB Audio Amplifier with Darlington Buffer</h3>
                 <h4>Discrete Multi-Stage Amplifier Design</h4>
@@ -68,7 +70,7 @@
                 <span class="document-link-label">Open Documentation</span>
             </a>
 
-            <a class="card project-link-card" href="./project-docs/EEE 148 DP1.pdf" data-doc-title="DC Motor Speed Controller Documentation">
+            <a class="card project-link-card" href="./project-docs/EEE 148 DP1.pdf" target="_blank" data-doc-title="DC Motor Speed Controller Documentation">
                 <div class="project-photo" style="background-image: url('./project-images/EEE 148 DP1.jpg');"></div>
                 <h3>5-Stage DC Motor Speed Controller</h3>
                 <h4>Pulse-Width Modulation Implementation</h4>
@@ -104,19 +106,6 @@
                 <span class="document-link-label unavailable">Documentation unavailable</span>
             </div>
 
-        </div>
-    </section>
-
-    <section id="project-documentation" class="bg-light pdf-viewer-section reveal">
-        <div class="pdf-viewer-header">
-            <div>
-                <h2 id="pdf-title">Project Documentation</h2>
-                <p class="section-desc">Select a project card above to view its PDF documentation here.</p>
-            </div>
-            <a id="pdf-open-link" class="pdf-open-link" href="#" target="_blank" rel="noopener noreferrer">Open PDF</a>
-        </div>
-        <div class="pdf-frame-wrap">
-            <iframe id="project-pdf-frame" title="Project documentation PDF"></iframe>
         </div>
     </section>
 
@@ -233,32 +222,6 @@
         window.addEventListener('scroll', reveal);
         reveal(); 
 
-        const projectCards = document.querySelectorAll('.project-link-card');
-        const pdfSection = document.getElementById('project-documentation');
-        const pdfFrame = document.getElementById('project-pdf-frame');
-        const pdfTitle = document.getElementById('pdf-title');
-        const pdfOpenLink = document.getElementById('pdf-open-link');
-
-        projectCards.forEach((card) => {
-            card.addEventListener('click', (event) => {
-                event.preventDefault();
-
-                const pdfPath = card.getAttribute('href');
-                pdfFrame.src = pdfPath;
-                pdfTitle.textContent = card.dataset.docTitle;
-                pdfOpenLink.href = pdfPath;
-                pdfSection.classList.add('active', 'has-pdf');
-                pdfSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-        });
-    </script>
-    <script>
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('nav-links');
-
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-});
 </script>
 </body>
 </html>
