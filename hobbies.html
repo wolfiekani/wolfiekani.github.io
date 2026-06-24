@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies | Seb Canillas</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/png" href="./logo.png">
+</head>
+<body>
+
+    <nav id="navbar">
+    <h2>kan1</h2>
+
+    <button class="hamburger" id="hamburger">
+        ☰
+    </button>
+
+    <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Experience & Projects</a></li>
+        <li><a href="hobbies.html">Side-quests</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+    <section class="sub-hero">
+        <h1>Outside <span>Engineering</span></h1>
+    </section>
+
+    <section id="hobbies" class="bg-dark reveal">
+    <h2>Hobbies and Interests</h2>
+        <p class="section-desc">
+            All work and no play makes Seb a dull boy.
+        </p>
+    <div class="hobby-bento">
+
+        <!-- Graphic Design - with slideshow -->
+        <div class="hobby-card graphic-design-card">
+            <div class="hobby-slideshow" data-interval="3000">
+                <div class="slideshow-track">
+                    <div class="slide" style="background-image:url('./hobbies/graphic-design/1.webp');"></div>
+                    <div class="slide" style="background-image:url('./hobbies/graphic-design/2.webp');"></div>
+                    <div class="slide" style="background-image:url('./hobbies/graphic-design/3.webp');"></div>
+                    <div class="slide" style="background-image:url('./hobbies/graphic-design/4.webp');"></div>
+                    <div class="slide" style="background-image:url('./hobbies/graphic-design/5.webp');"></div>
+                    <div class="slide" style="background-image:url('./hobbies/graphic-design/6.webp');"></div>
+                </div>
+                <button class="slide-btn prev">‹</button>
+                <button class="slide-btn next">›</button>
+                <div class="slide-dots"></div>
+            </div>
+            <div class="hobby-content">
+                <h3>Graphic Design</h3>
+                <p>Made using a cracked Adobe Photoshop 2023.</p>
+            </div>
+        </div>
+
+        <!-- Running - static image -->
+        <div class="hobby-card">
+            <div class="hobby-photo" style="background-image:url('./hobbies/running.jpg');"></div>
+            <div class="hobby-content">
+                <h3>Running</h3>
+                <p>I enjoy running for both fitness and mental clarity, most notably it prevents me from doomscrolling.</p>
+            </div>
+        </div>
+
+        <!-- Gaming - static image -->
+        <div class="hobby-card">
+            <div class="hobby-photo" style="background-image:url('./hobbies/basketball.jpg');"></div>
+            <div class="hobby-content">
+                <h3>Basketball</h3>
+                <p>Ball knowledge.</p>
+            </div>
+        </div>
+
+        <!-- Reading - static image -->
+        <div class="hobby-card">
+            <div class="hobby-photo" style="background-image:url('./hobbies/travelling.jpg');"></div>
+            <div class="hobby-content">
+                <h3>Travelling</h3>
+                <p>Unfamiliar streets, yes please!</p>
+            </div>
+        </div>
+
+        <!-- Activism - static image -->
+        <div class="hobby-card">
+            <div class="hobby-photo" style="background-image:url('./hobbies/activism.jpg');"></div>
+            <div class="hobby-content">
+                <h3>Activism</h3>
+                <p>stp.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <section id="hobbies-experience" class="bg-light reveal">
+        <h2>Noteworthy Experiences</h2>
+        <p class="section-desc">
+            A few standout moments that shaped how I think and work outside the classroom.
+        </p>
+
+        <div class="hobby-bento hobby-bento-3col">
+
+            <div class="hobby-card">
+                <div class="hobby-photo" style="background-image:url('./hobbies/SLC.jpg');"></div>
+                <div class="hobby-content">
+                    <h3>Scholars Leadership Camp 2026</h3>
+                    <p>A premier leadership and community-building program organized by the Department of Science and Technology - Science Education Institute (DOST-SEI). It features immersive workshops focused on servant leadership, effective communication, and patriotism</p>
+                </div>
+            </div>
+
+            <div class="hobby-card">
+                <div class="hobby-photo" style="background-image:url('./hobbies/SLA.jpg');"></div>
+                <div class="hobby-content">
+                    <h3>Scholars Leadership Assembly 2025</h3>
+                    <p>An initiative by NADS, the program aims to cultivate socially responsible, servant-leaders and professionally excellent scholar-leaders capable of initiating impactful projects within communities.</p>
+                </div>
+            </div>
+
+            <div class="hobby-card">
+                <div class="hobby-photo" style="background-image:url('./hobbies/CCRP.jpg');"></div>
+                <div class="hobby-content">
+                    <h3>Career College Readiness Program 2025</h3>
+                    <p>An initiative of SK Santolan, we spearheaded mock exams and review sessions to assist Grade 12 students that will be taking the 2026 UPCAT.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Seb Canillas. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) { nav.classList.add('scrolled'); }
+            else { nav.classList.remove('scrolled'); }
+        });
+
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) { reveals[i].classList.add('active'); }
+            }
+        }
+        window.addEventListener('scroll', reveal);
+        reveal();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.hobby-slideshow').forEach((container) => {
+                const track = container.querySelector('.slideshow-track');
+                const slides = container.querySelectorAll('.slide');
+                const dots = container.querySelector('.slide-dots');
+                const prevBtn = container.querySelector('.prev');
+                const nextBtn = container.querySelector('.next');
+                let currentIndex = 0;
+                let interval = parseInt(container.dataset.interval) || 3000;
+                let autoPlayTimer = null;
+                let isHovering = false;
+
+                if (slides.length === 0) return;
+
+                slides.forEach((_, i) => {
+                    const dot = document.createElement('span');
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => goTo(i));
+                    dots.appendChild(dot);
+                });
+
+                function goTo(index) {
+                    if (index < 0) index = slides.length - 1;
+                    if (index >= slides.length) index = 0;
+                    currentIndex = index;
+                    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                    dots.querySelectorAll('span').forEach((dot, i) => {
+                        dot.classList.toggle('active', i === currentIndex);
+                    });
+                }
+
+                function next() { goTo(currentIndex + 1); }
+                function prev() { goTo(currentIndex - 1); }
+
+                function startAutoPlay() {
+                    if (autoPlayTimer) clearInterval(autoPlayTimer);
+                    if (slides.length <= 1) return;
+                    autoPlayTimer = setInterval(() => {
+                        if (!isHovering) next();
+                    }, interval);
+                }
+
+                if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prev(); });
+                if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); next(); });
+
+                container.addEventListener('mouseenter', () => { isHovering = true; });
+                container.addEventListener('mouseleave', () => { isHovering = false; });
+
+                startAutoPlay();
+            });
+        });
+    </script>
+    <script>
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+});
+</script>
+</body>
+</html>

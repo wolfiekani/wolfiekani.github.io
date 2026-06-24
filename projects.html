@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects & Experience | Seb Canillas</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/png" href="./logo.png">
+</head>
+<body>
+
+    <nav id="navbar">
+    <h2>kan1</h2>
+
+    <button class="hamburger" id="hamburger">
+        ☰
+    </button>
+
+    <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Experience & Projects</a></li>
+        <li><a href="hobbies.html">Side-quests</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+    <section class="sub-hero">
+        <h1>Engineering <span>Projects & Experience</span></h1>
+    </section>
+
+    <section id="projects" class="bg-dark reveal">
+        <h2>Software & Hardware Projects</h2>
+        <div class="grid-container">
+
+            <a class="card project-link-card" href="./project-docs/EEE 121 SP2.pdf" data-doc-title="Maze Generation System Documentation">
+                <div class="project-photo" style="background-image: url('./project-images/EEE 121 SP2.png');"></div>
+                <h3>Maze Generation System</h3>
+                <h4>C++ Data Structures & Algorithms</h4>
+                <p>Developed a procedural maze generation program ("Maze Runner") in C++ that constructs perfect 2D rectangular mazes—ensuring no cycles and exactly one unique path between any two points.</p>
+                <ul>
+                    <li>Implemented Kruskal's algorithm and disjoint-set (union-find) data structures to model the maze as a Minimum Spanning Tree (MST).</li>
+                    <li>Designed efficient grid initialization and randomized edge generation via `std::shuffle()` to ensure unique maze layouts on every execution.</li>
+                    <li>Rendered the final generated spanning tree using an ASCII-based console visualization.</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">Kruskal's Algorithm</span>
+                    <span class="tech-tag">Graph Theory</span>
+                </div>
+                <span class="document-link-label">Open Documentation</span>
+            </a>
+            
+            <a class="card project-link-card" href="./project-docs/EEE 138 DP.pdf" data-doc-title="Class AB Audio Amplifier Documentation">
+                <div class="project-photo" style="background-image: url('./project-images/EEE 138 DP.png');"></div>
+                <h3>Class AB Audio Amplifier with Darlington Buffer</h3>
+                <h4>Discrete Multi-Stage Amplifier Design</h4>
+                <p>Designed and implemented a discrete multi-stage audio amplifier capable of driving an 8Ω load from a single 6V supply. Integrated a Two-Stage Common Emitter voltage amplifier with a Darlington-buffered Class AB output stage to resolve impedance mismatching.</p>
+                <ul>
+                    <li>Achieved a total system gain of 230.26 V/V and a peak-to-peak output of 2.6V, exceeding simulated predictions.</li>
+                    <li>Confirmed operational bandwidth of 500 Hz to 10.9 kHz, optimized for mid-range audio reproduction.</li>
+                    <li>Conducted rigorous LTspice simulations and hardware breadboard testing, utilizing diode biasing to minimize crossover distortion.</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">LTspice</span>
+                    <span class="tech-tag">BJT Analysis</span>
+                    <span class="tech-tag">Circuit Design</span>
+                </div>
+                <span class="document-link-label">Open Documentation</span>
+            </a>
+
+            <a class="card project-link-card" href="./project-docs/EEE 148 DP1.pdf" data-doc-title="DC Motor Speed Controller Documentation">
+                <div class="project-photo" style="background-image: url('./project-images/EEE 148 DP1.jpg');"></div>
+                <h3>5-Stage DC Motor Speed Controller</h3>
+                <h4>Pulse-Width Modulation Implementation</h4>
+                <p>Engineered a brushed DC motor speed controller utilizing a 5-stage analog circuit. The design included an Astable Multivibrator, Gain stage, Monostable Multivibrator, Emitter-follower Buffer, and Motor Driver.</p>
+                <ul>
+                    <li>Generated a PWM signal operating at 4000 Hz, with a tunable duty cycle swinging from 55% to 85% via potentiometer control.</li>
+                    <li>Conditioned the astable output using an intermediate gain stage (common-emitter switch) to cleanly trigger the monostable network.</li>
+                    <li>Successfully built and verified the circuit on a breadboard, adhering within a strict ±100 Hz and 5% tolerance margin.</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">Analog Electronics</span>
+                    <span class="tech-tag">LTspice</span>
+                    <span class="tech-tag">PWM Control</span>
+                </div>
+                <span class="document-link-label">Open Documentation</span>
+            </a>
+
+            <div class="card">
+                <div class="project-photo" style="background-image: url('./project-images/EEE 148 DP2.jpg');"></div>
+                <h3>Automatic Washing Machine PLC Control</h3>
+                <h4>Industrial Automation Logic Design</h4>
+                <p>Programmed a Siemens Programmable Logic Controller (PLC) using Ladder Diagram to automate the cycle sequences of a washing machine. The system interfaced with pushbutton controls, pilot lamp indicators, and contactor relays.</p>
+                <ul>
+                    <li>Developed complex logic to manage variable Wash, Rinse, and Spin cycles dynamically based on user-selected load levels and program types (Normal, Delicate, Heavy).</li>
+                    <li>Simulated bidirectional drum movement by alternating CW and CCW jogs of a Shunt DC Machine with precise hold intervals.</li>
+                    <li>Implemented safety interlocks, including an emergency stop feature with dynamic braking, and state-retention pausing functions.</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">Siemens PLC</span>
+                    <span class="tech-tag">Ladder Logic</span>
+                    <span class="tech-tag">Motor Control</span>
+                </div>
+                <span class="document-link-label unavailable">Documentation unavailable</span>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="project-documentation" class="bg-light pdf-viewer-section reveal">
+        <div class="pdf-viewer-header">
+            <div>
+                <h2 id="pdf-title">Project Documentation</h2>
+                <p class="section-desc">Select a project card above to view its PDF documentation here.</p>
+            </div>
+            <a id="pdf-open-link" class="pdf-open-link" href="#" target="_blank" rel="noopener noreferrer">Open PDF</a>
+        </div>
+        <div class="pdf-frame-wrap">
+            <iframe id="project-pdf-frame" title="Project documentation PDF"></iframe>
+        </div>
+    </section>
+
+    <section id="experience" class="bg-light reveal">
+        <h2>Leadership & Organizations</h2>
+        <div class="grid-container">
+            
+            <div class="card">
+                <div class="organization-header">
+                    <div class="organization-logo">
+                        <img src="./organization-logos/ESC.jpg" alt="UP Engineering Student Council logo">
+                    </div>
+                    <div>
+                        <h3>UP Engineering Student Council</h3>
+                        <h4>EEE Representative</h4>
+                    </div>
+                </div>
+                <div class="meta">Diliman, Quezon City | Oct 2025 – Present</div>
+                <ul>
+                    <li>Serves as the liaison between the students and administration of the UP Electrical and Electronics Engineering Institute (EEEI).</li>
+                    <li>Publicity head of Engineering Week 2026, showcasing the diverse talents of the Engineering community through events and games.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="organization-header">
+                    <div class="organization-logo logo-erg">
+                        <img src="./organization-logos/ERG.jpg" alt="UP Engineering Radio Guild logo">
+                    </div>
+                    <div>
+                        <h3>UP Engineering Radio Guild</h3>
+                        <h4>Member</h4>
+                    </div>
+                </div>
+                <div class="meta">Diliman, Quezon City | June 2025 – Present</div>
+                <ul>
+                    <li>Serves as the liaison between the students and administration of the UP Electrical and Electronics Engineering Institute (EEEI).</li>
+                    <li>Publicity head of Engineering Week 2026, showcasing the diverse talents of the Engineering community through events and games.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="organization-header">
+                    <div class="organization-logo">
+                        <img src="./organization-logos/SA.jpg" alt="UP DOST Scholars' Association logo">
+                    </div>
+                    <div>
+                        <h3>UP DOST Scholars' Association</h3>
+                        <h4>Member</h4>
+                    </div>
+                </div>
+                <div class="meta">Diliman, Quezon City | Feb 2025 – Present</div>
+                <ul>
+                    <li>Coordinated the Project WISKO initiative with NADS, conducting mock exams for the 2025 DOST Undergraduate Scholarship.</li>
+                    <li>As Logistics Head for Scholars' Day Out, was responsible for managing supplier databases, tracking inventory, and coordinating the distribution of food and supplies for a seamless campus tour.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="organization-header">
+                    <div class="organization-logo logo-start">
+                        <img src="./organization-logos/START.jpg" alt="START DOST logo">
+                    </div>
+                    <div>
+                        <h3>START DOST</h3>
+                        <h4>Deputy Chief Communications Officer for Sponsorships & Media</h4>
+                    </div>
+                </div>
+                <div class="meta">Philippines | Oct 2025 – Mar 2026</div>
+                <ul>
+                    <li>Secured sponsors and partners for KickSTART and TechSTART 2026, initiatives equipping DOST scholars nationwide with knowledge in modern technology.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="organization-header">
+                    <div class="organization-logo">
+                        <img src="./organization-logos/NADS.jpg" alt="NCR Alliance of DOST Scholars logo">
+                    </div>
+                    <div>
+                        <h3>NCR Alliance of DOST Scholars</h3>
+                        <h4>Officer</h4>
+                    </div>
+                </div>
+                <div class="meta">Bicutan, Taguig City | May 2025 – Dec 2025</div>
+                <ul>
+                    <li>Created and managed databases of company details for potential partnerships as an External Affairs Committee officer.</li>
+                    <li>Headed the Sponsorships and Partnerships Committee of the 2025 Scholars Colloquium to foster research excellence and innovation.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Seb Canillas. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) { nav.classList.add('scrolled'); } 
+            else { nav.classList.remove('scrolled'); }
+        });
+
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) { reveals[i].classList.add('active'); }
+            }
+        }
+        window.addEventListener('scroll', reveal);
+        reveal(); 
+
+        const projectCards = document.querySelectorAll('.project-link-card');
+        const pdfSection = document.getElementById('project-documentation');
+        const pdfFrame = document.getElementById('project-pdf-frame');
+        const pdfTitle = document.getElementById('pdf-title');
+        const pdfOpenLink = document.getElementById('pdf-open-link');
+
+        projectCards.forEach((card) => {
+            card.addEventListener('click', (event) => {
+                event.preventDefault();
+
+                const pdfPath = card.getAttribute('href');
+                pdfFrame.src = pdfPath;
+                pdfTitle.textContent = card.dataset.docTitle;
+                pdfOpenLink.href = pdfPath;
+                pdfSection.classList.add('active', 'has-pdf');
+                pdfSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+    <script>
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+});
+</script>
+</body>
+</html>
