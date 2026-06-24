@@ -92,13 +92,12 @@ nav a:hover, nav a.active {
 .nav-logo {
     display: flex;
     align-items: center;
-    text-decoration: none;
 }
 
 .nav-logo img {
-    height: 42px;
+    height: 36px;
     width: auto;
-    transition: transform 0.3s ease;
+    display: block;
 }
 
 .nav-logo:hover img {
