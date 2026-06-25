@@ -1563,28 +1563,10 @@ footer {
         text-align: center;
         width: 100%;
     }
-    /* Noteworthy Experiences - Mobile Layout */
-.snapshot-feature {
-    display: flex;
-    flex-direction: column;
-    min-height: auto;
-    overflow: hidden;
-}
-
-.snapshot-feature::before {
-    height: 220px;
-}
-
-.snapshot-content {
-    position: static;
-    background: var(--card-bg);
-    padding: 18px;
-    width: 100%;
-}
-
-.snapshot-content h3 {
-    margin-bottom: 8px;
-}
+    #hobbies-experience .hobby-card:active .hobby-content p {
+        max-height: 120px;
+        opacity: 1;
+    }
 }
 
 
