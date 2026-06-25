@@ -1595,6 +1595,26 @@ footer {
         display: flex;
     }
 
+
+    .project-details {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+    }
+
+    .project-card.active .project-details {
+        max-height: 500px;
+    }
+
+    .read-more-btn {
+        margin-top: 12px;
+        background: none;
+        border: none;
+        color: var(--accent);
+        font-weight: 600;
+        cursor: pointer;
+        padding: 0;
+    }
 @keyframes slideDown {
     from {
         opacity: 0;

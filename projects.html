@@ -51,6 +51,9 @@
                     <span class="tech-tag">Kruskal's Algorithm</span>
                     <span class="tech-tag">Graph Theory</span>
                 </div>
+                <button class="read-more-btn">
+                    Read More
+                </button>
                 <span class="document-link-label">Open Documentation</span>
             </a>
             
@@ -69,9 +72,12 @@
                     <span class="tech-tag">BJT Analysis</span>
                     <span class="tech-tag">Circuit Design</span>
                 </div>
+                <button class="read-more-btn">
+                    Read More
+                </button>
                 <span class="document-link-label">Open Documentation</span>
             </a>
-
+            
             <a class="card project-link-card" href="./project-docs/EEE 148 DP1.pdf" target="_blank" data-doc-title="DC Motor Speed Controller Documentation">
                 <div class="project-photo" style="background-image: url('./project-images/EEE 148 DP1.jpg');"></div>
                 <h3>5-Stage DC Motor Speed Controller</h3>
@@ -87,6 +93,9 @@
                     <span class="tech-tag">LTspice</span>
                     <span class="tech-tag">PWM Control</span>
                 </div>
+                <button class="read-more-btn">
+                    Read More
+                </button>
                 <span class="document-link-label">Open Documentation</span>
             </a>
 
@@ -105,6 +114,9 @@
                     <span class="tech-tag">Ladder Logic</span>
                     <span class="tech-tag">Motor Control</span>
                 </div>
+                <button class="read-more-btn">
+                    Read More
+                </button>
                 <span class="document-link-label unavailable">Documentation unavailable</span>
             </div>
 
@@ -231,6 +243,33 @@ const navLinks = document.getElementById('nav-links');
 hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('show');
 });
+</script>
+
+<script>
+if (window.innerWidth <= 768) {
+
+    document
+        .querySelectorAll('.read-more-btn')
+        .forEach(button => {
+
+            button.addEventListener('click', (e) => {
+
+                e.preventDefault();
+
+                const card = button.closest('.card');
+
+                card.classList.toggle('active');
+
+                button.textContent =
+                    card.classList.contains('active')
+                    ? 'Read Less'
+                    : 'Read More';
+
+            });
+
+        });
+
+}
 </script>
 </body>
 </html>
