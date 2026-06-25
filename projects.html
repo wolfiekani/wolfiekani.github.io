@@ -41,15 +41,17 @@
                 <h3>Maze Generation System</h3>
                 <h4>C++ Data Structures & Algorithms</h4>
                 <p>Developed a procedural maze generation program ("Maze Runner") in C++ that constructs perfect 2D rectangular mazes—ensuring no cycles and exactly one unique path between any two points.</p>
+                <div class="project-details">
                 <ul>
                     <li>Implemented Kruskal's algorithm and disjoint-set (union-find) data structures to model the maze as a Minimum Spanning Tree (MST).</li>
                     <li>Designed efficient grid initialization and randomized edge generation via `std::shuffle()` to ensure unique maze layouts on every execution.</li>
                     <li>Rendered the final generated spanning tree using an ASCII-based console visualization.</li>
                 </ul>
-                <div class="tech-tags">
-                    <span class="tech-tag">C++</span>
-                    <span class="tech-tag">Kruskal's Algorithm</span>
-                    <span class="tech-tag">Graph Theory</span>
+                    <div class="tech-tags">
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Kruskal's Algorithm</span>
+                        <span class="tech-tag">Graph Theory</span>
+                    </div>
                 </div>
                 <button class="read-more-btn">
                     Read More
@@ -62,6 +64,7 @@
                 <h3>Class AB Audio Amplifier with Darlington Buffer</h3>
                 <h4>Discrete Multi-Stage Amplifier Design</h4>
                 <p>Designed and implemented a discrete multi-stage audio amplifier capable of driving an 8Ω load from a single 6V supply. Integrated a Two-Stage Common Emitter voltage amplifier with a Darlington-buffered Class AB output stage to resolve impedance mismatching.</p>
+                <div class="project-details">
                 <ul>
                     <li>Achieved a total system gain of 230.26 V/V and a peak-to-peak output of 2.6V, exceeding simulated predictions.</li>
                     <li>Confirmed operational bandwidth of 500 Hz to 10.9 kHz, optimized for mid-range audio reproduction.</li>
@@ -71,6 +74,7 @@
                     <span class="tech-tag">LTspice</span>
                     <span class="tech-tag">BJT Analysis</span>
                     <span class="tech-tag">Circuit Design</span>
+                </div>
                 </div>
                 <button class="read-more-btn">
                     Read More
@@ -83,6 +87,7 @@
                 <h3>5-Stage DC Motor Speed Controller</h3>
                 <h4>Pulse-Width Modulation Implementation</h4>
                 <p>Engineered a brushed DC motor speed controller utilizing a 5-stage analog circuit. The design included an Astable Multivibrator, Gain stage, Monostable Multivibrator, Emitter-follower Buffer, and Motor Driver.</p>
+                <div class="project-details">
                 <ul>
                     <li>Generated a PWM signal operating at 4000 Hz, with a tunable duty cycle swinging from 55% to 85% via potentiometer control.</li>
                     <li>Conditioned the astable output using an intermediate gain stage (common-emitter switch) to cleanly trigger the monostable network.</li>
@@ -92,6 +97,7 @@
                     <span class="tech-tag">Analog Electronics</span>
                     <span class="tech-tag">LTspice</span>
                     <span class="tech-tag">PWM Control</span>
+                </div>
                 </div>
                 <button class="read-more-btn">
                     Read More
@@ -246,30 +252,30 @@ hamburger.addEventListener('click', () => {
 </script>
 
 <script>
-if (window.innerWidth <= 768) {
+document.addEventListener("DOMContentLoaded", () => {
 
-    document
-        .querySelectorAll('.read-more-btn')
-        .forEach(button => {
+    if (window.innerWidth > 768) return;
 
-            button.addEventListener('click', (e) => {
+    const buttons = document.querySelectorAll(".read-more-btn");
 
-                e.preventDefault();
+    buttons.forEach(button => {
 
-                const card = button.closest('.card');
+        button.addEventListener("click", () => {
 
-                card.classList.toggle('active');
+            const card = button.closest(".card");
 
-                button.textContent =
-                    card.classList.contains('active')
-                    ? 'Read Less'
-                    : 'Read More';
+            card.classList.toggle("active");
 
-            });
+            button.textContent =
+                card.classList.contains("active")
+                ? "Read Less"
+                : "Read More";
 
         });
 
-}
+    });
+
+});
 </script>
 </body>
 </html>

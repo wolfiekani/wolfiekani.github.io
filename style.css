@@ -1103,6 +1103,10 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+/* Hide Read More button on desktop */
+.read-more-btn {
+    display: none;
+}
 
 @media (max-width: 1000px) {
     .home-hero-layout {
@@ -1607,13 +1611,24 @@ footer {
     }
 
     .read-more-btn {
+        display: inline-block;
         margin-top: 12px;
         background: none;
         border: none;
-        color: var(--accent);
-        font-weight: 600;
+        color: var(--accent-color);
         cursor: pointer;
+        font-weight: 600;
         padding: 0;
+    }
+
+    .project-details {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+    }
+
+    .card.active .project-details {
+        max-height: 500px;
     }
 @keyframes slideDown {
     from {
