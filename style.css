@@ -475,13 +475,12 @@ a.snapshot-widget:hover {
     transition: all 0.3s ease;
     opacity: 0;
     animation: fadeInUp 1s ease-out 0.6s forwards;
-    box-shadow: 0 4px 15px var(--accent-glow);
     margin-top: 10px;
 }
 
 .btn:hover {
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 25px var(--accent-glow);
+    box-shadow: 0 0px 25px var(--accent-glow);
 }
 
 /* --- LAYOUT & TYPOGRAPHY --- */
@@ -546,20 +545,21 @@ h2::after {
 
 /* --- CARDS --- */
 .grid-container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 24px;
 }
 
 .card {
     background: var(--card-bg);
+    padding: 30px;
     border-radius: 15px;
     border: 1px solid rgba(255,255,255,0.05);
-    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    transition: all 0.4s ease;
     position: relative;
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    align-items: start;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .card::before {
@@ -573,8 +573,6 @@ h2::after {
     transform: scaleY(0);
     transition: transform 0.4s ease;
     transform-origin: bottom;
-    border-radius: 15px 0 0 15px;
-    z-index: 1;
 }
 
 .card:hover::before { transform: scaleY(1); }
@@ -642,6 +640,20 @@ h2::after {
     color: var(--accent);
 }
 
+.project-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition:
+        max-height 0.4s ease,
+        opacity 0.3s ease;
+}
+
+.card.active .project-details {
+    max-height: 500px;
+    opacity: 1;
+}
+
 .organization-header {
     display: flex;
     align-items: center;
@@ -686,33 +698,14 @@ h2::after {
 
 .project-photo,
 .education-photo {
-    width: 100%;
-    height: 260px;
+    min-height: 200px;
+    margin: -30px -30px 25px;
     background-color: #111827;
     background-image: linear-gradient(135deg, rgba(56, 189, 248, 0.16), rgba(129, 140, 248, 0.18));
     background-position: center;
     background-size: cover;
-    border-right: 1px solid rgba(255,255,255,0.05);
-    border-radius: 15px 0 0 15px;
-    position: sticky;
-    top: 80px;
-    overflow: hidden;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
-
-.card-content {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    padding: 30px;
-    border-radius: 0 15px 15px 0;
-}
-
-/* Organization cards have no side photo — single column, content gets normal padding */
-#experience .card {
-    grid-template-columns: 1fr;
-    padding: 30px;
-}
-
 
 .tech-tags {
     margin-top: auto;
@@ -1125,34 +1118,21 @@ footer {
 
 }
 .read-more-btn {
+    width: fit-content;
     margin-top: 12px;
-    background: none;
-    border: none;
-    color: var(--accent);
-    cursor: pointer;
-    font-weight: 600;
-    padding: 0;
-    font-size: 0.95rem;
+    padding: 6px 12px;
+    font-size: 0.85rem;
 }
 
-.project-details {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden;
-    will-change: grid-template-rows;
-}
+   .project-details {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+    }
 
-.project-details > div {
-    overflow: hidden;
-    min-height: 0;
-}
-
-.card.active .project-details {
-    grid-template-rows: 1fr;
-}
-
-
+    .project-card.active .project-details {
+        max-height: 500px;
+    }
     
 @media (max-width: 1000px) {
     .home-hero-layout {
@@ -1269,18 +1249,9 @@ footer {
         font-size: 2.3rem;
     }
 
-    .card {
-        grid-template-columns: 1fr;
-    }
-
     .project-photo,
     .education-photo {
-        position: static;
-        width: 100%;
-        height: 200px;
-        border-right: none;
-        border-bottom: 1px solid rgba(255,255,255,0.05);
-        border-radius: 15px 15px 0 0;
+        min-height: 170px;
     }
 
     .organization-header {
@@ -1544,17 +1515,12 @@ footer {
     }
 
     .card {
-        grid-template-columns: 1fr;
+        padding: 24px;
     }
 
     .project-photo,
     .education-photo {
-        position: static;
-        width: 100%;
-        height: 180px;
-        border-right: none;
-        border-bottom: 1px solid rgba(255,255,255,0.05);
-        border-radius: 15px 15px 0 0;
+        margin: -24px -24px 20px;
     }
 
     /* ORGANIZATION HEADER */
@@ -1645,6 +1611,28 @@ footer {
         display: flex;
     }
 
+    .project-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+
+.project-details.expanded {
+    max-height: 1000px;
+}
+
+.read-more-btn {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 12px;
+}
+
+    .card.active .project-details {
+        max-height: 1000px;
+    }
 @keyframes slideDown {
     from {
         opacity: 0;

@@ -38,84 +38,92 @@
 
             <a class="card">
                 <div class="project-photo" style="background-image: url('./project-images/EEE 121 SP2.png');"></div>
-                <div class="card-content">
-                    <h3>Maze Generation System</h3>
-                    <h4>C++ Data Structures & Algorithms</h4>
-                    <p>Developed a procedural maze generation program ("Maze Runner") in C++ that constructs perfect 2D rectangular mazes—ensuring no cycles and exactly one unique path between any two points.</p>
-                    <div class="project-details"><div><ul>
-                            <li>Implemented Kruskal's algorithm and disjoint-set (union-find) data structures to model the maze as a Minimum Spanning Tree (MST).</li>
-                            <li>Designed efficient grid initialization and randomized edge generation via `std::shuffle()` to ensure unique maze layouts on every execution.</li>
-                            <li>Rendered the final generated spanning tree using an ASCII-based console visualization.</li>
-                        </ul></div></div>
-                    <div class="tech-tags">
+                <h3>Maze Generation System</h3>
+                <h4>C++ Data Structures & Algorithms</h4>
+                <p>Programmed a two-dimensional grid application in C++ dedicated to generating perfect rectangular mazes. Constructed the core generation engine using a randomized graph-theory approach, ensuring a singular continuous path links any two coordinates. Managed structural arrays and visual output formatting to produce clear, console-ready puzzle layouts for end-users.</p>
+                <div class="project-details">
+                <ul>
+                    <li>Implemented Kruskal's algorithm and disjoint-set (union-find) data structures to model the maze as a Minimum Spanning Tree (MST).</li>
+                    <li>Designed efficient grid initialization and randomized edge generation via `std::shuffle()` to ensure unique maze layouts on every execution.</li>
+                    <li>Rendered the final generated spanning tree using an ASCII-based console visualization.</li>
+                </ul>
+                </div>
+                <div class="tech-tags">
                         <span class="tech-tag">C++</span>
                         <span class="tech-tag">Kruskal's Algorithm</span>
                         <span class="tech-tag">Graph Theory</span>
-                    </div>
-                    <button class="read-more-btn">Read More</button>
                 </div>
+                <button class="btn read-more-btn">
+                    Read More
+                </button>
             </a>
             
             <a class="card">
                 <div class="project-photo" style="background-image: url('./project-images/EEE 138 DP.png');"></div>
-                <div class="card-content">
-                    <h3>Class AB Audio Amplifier with Darlington Buffer</h3>
-                    <h4>Discrete Multi-Stage Amplifier Design</h4>
-                    <p>Designed and implemented a discrete multi-stage audio amplifier capable of driving an 8Ω load from a single 6V supply. Integrated a Two-Stage Common Emitter voltage amplifier with a Darlington-buffered Class AB output stage to resolve impedance mismatching.</p>
-                    <div class="project-details"><div><ul>
-                            <li>Achieved a total system gain of 230.26 V/V and a peak-to-peak output of 2.6V, exceeding simulated predictions.</li>
-                            <li>Confirmed operational bandwidth of 500 Hz to 10.9 kHz, optimized for mid-range audio reproduction.</li>
-                            <li>Conducted rigorous LTspice simulations and hardware breadboard testing, utilizing diode biasing to minimize crossover distortion.</li>
-                        </ul></div></div>
-                    <div class="tech-tags">
-                        <span class="tech-tag">LTspice</span>
-                        <span class="tech-tag">BJT Analysis</span>
-                        <span class="tech-tag">Circuit Design</span>
-                    </div>
-                    <button class="read-more-btn">Read More</button>
+                <h3>Class AB Audio Amplifier with Darlington Buffer</h3>
+                <h4>Discrete Multi-Stage Amplifier Design</h4>
+                <p>Constructed a physical, low-voltage audio amplification circuit tailored to drive standard low-impedance loads. Engineered the internal architecture by coupling a common-emitter core with a buffer and a push-pull driver stage. Solved critical loading effect issues and ensured clean signal delivery through targeted component calibration and precise frequency cutoff tuning.</p>
+                <div class="project-details">
+                <ul>
+                    <li>Achieved a total system gain of 230.26 V/V and a peak-to-peak output of 2.6V, exceeding simulated predictions.</li>
+                    <li>Confirmed operational bandwidth of 500 Hz to 10.9 kHz, optimized for mid-range audio reproduction.</li>
+                    <li>Conducted rigorous LTspice simulations and hardware breadboard testing, utilizing diode biasing to minimize crossover distortion.</li>
+                </ul>
                 </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">LTspice</span>
+                    <span class="tech-tag">BJT Analysis</span>
+                    <span class="tech-tag">Circuit Design</span>
+                </div>
+                <button class="btn read-more-btn">
+                    Read More
+                </button>
             </a>
             
             <a class="card">
                 <div class="project-photo" style="background-image: url('./project-images/EEE 148 DP1.jpg');"></div>
-                <div class="card-content">
-                    <h3>5-Stage DC Motor Speed Controller</h3>
-                    <h4>Pulse-Width Modulation Implementation</h4>
-                    <p>Engineered a brushed DC motor speed controller utilizing a 5-stage analog circuit. The design included an Astable Multivibrator, Gain stage, Monostable Multivibrator, Emitter-follower Buffer, and Motor Driver.</p>
-                    <div class="project-details"><div><ul>
-                            <li>Generated a PWM signal operating at 4000 Hz, with a tunable duty cycle swinging from 55% to 85% via potentiometer control.</li>
-                            <li>Conditioned the astable output using an intermediate gain stage (common-emitter switch) to cleanly trigger the monostable network.</li>
-                            <li>Successfully built and verified the circuit on a breadboard, adhering within a strict ±100 Hz and 5% tolerance margin.</li>
-                        </ul></div></div>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Analog Electronics</span>
-                        <span class="tech-tag">LTspice</span>
-                        <span class="tech-tag">PWM Control</span>
-                    </div>
-                    <button class="read-more-btn">Read More</button>
+                <h3>5-Stage DC Motor Speed Controller</h3>
+                <h4>Pulse-Width Modulation Implementation</h4>
+                <p>Engineered an analog speed control unit for direct-current motors utilizing custom-built oscillator stages. Designed the underlying timing architecture with interconnected multivibrator circuits to manipulate terminal voltage precisely. Transitioned the completed schematic from digital simulation environments directly into a soldered physical prototype to regulate mechanical output dynamically.</p>
+                <div class="project-details">
+                <ul>
+                    <li>Generated a PWM signal operating at 4000 Hz, with a tunable duty cycle swinging from 55% to 85% via potentiometer control.</li>
+                    <li>Conditioned the astable output using an intermediate gain stage (common-emitter switch) to cleanly trigger the monostable network.</li>
+                    <li>Successfully built and verified the circuit on a breadboard, adhering within a strict ±100 Hz and 5% tolerance margin.</li>
+                </ul>
                 </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">Analog Electronics</span>
+                    <span class="tech-tag">LTspice</span>
+                    <span class="tech-tag">PWM Control</span>
+                </div>
+                <button class="btn read-more-btn">
+                    Read More
+                </button>
             </a>
 
+            
             <a class="card">
                 <div class="project-photo" style="background-image: url('./project-images/EEE 148 DP2.jpg');"></div>
-                <div class="card-content">
-                    <h3>Automatic Washing Machine PLC Control</h3>
-                    <h4>Industrial Automation Logic Design</h4>
-                    <p>Programmed a Siemens Programmable Logic Controller (PLC) using Ladder Diagram to automate the cycle sequences of a washing machine. The system interfaced with pushbutton controls, pilot lamp indicators, and contactor relays.</p>
-                    <div class="project-details"><div><ul>
-                            <li>Developed complex logic to manage variable Wash, Rinse, and Spin cycles dynamically based on user-selected load levels and program types (Normal, Delicate, Heavy).</li>
-                            <li>Simulated bidirectional drum movement by alternating CW and CCW jogs of a Shunt DC Machine with precise hold intervals.</li>
-                            <li>Implemented safety interlocks, including an emergency stop feature with dynamic braking, and state-retention pausing functions.</li>
-                        </ul></div></div>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Siemens PLC</span>
-                        <span class="tech-tag">Ladder Logic</span>
-                        <span class="tech-tag">Motor Control</span>
-                    </div>
-                    <button class="read-more-btn">Read More</button>
+                <h3>Automatic Washing Machine PLC Control</h3>
+                <h4>Industrial Automation Logic Design</h4>
+                <p>Programmed a Siemens Programmable Logic Controller (PLC) using Ladder Diagram to automate the cycle sequences of a washing machine. The system interfaced with pushbutton controls, pilot lamp indicators, and contactor relays.</p>
+                <div class="project-details">
+                <ul>
+                    <li>Developed complex logic to manage variable Wash, Rinse, and Spin cycles dynamically based on user-selected load levels and program types (Normal, Delicate, Heavy).</li>
+                    <li>Simulated bidirectional drum movement by alternating CW and CCW jogs of a Shunt DC Machine with precise hold intervals.</li>
+                    <li>Implemented safety interlocks, including an emergency stop feature with dynamic braking, and state-retention pausing functions.</li>
+                </ul>
                 </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">Siemens PLC</span>
+                    <span class="tech-tag">Ladder Logic</span>
+                    <span class="tech-tag">Motor Control</span>
+                </div>
+                <button class="btn read-more-btn">
+                    Read More
+                </button>
             </a>
-        </div>
     </section>
 
     <section id="experience" class="bg-light reveal">
@@ -151,8 +159,8 @@
                 </div>
                 <div class="meta">Diliman, Quezon City | June 2025 – Present</div>
                 <ul>
-                    <li>Serves as the liaison between the students and administration of the UP Electrical and Electronics Engineering Institute (EEEI).</li>
-                    <li>Publicity head of Engineering Week 2026, showcasing the diverse talents of the Engineering community through events and games.</li>
+                    <li>As External Affairs Committee member, evaluated sponsorship and partnership proposals sent to UP ERG.</li>
+                    <li>Programs Associate of Chill Ikot 2026, a welcoming event for Freshies, Shiftees, and Transferees of UP College of Engineering.</li>
                 </ul>
             </div>
 
@@ -185,7 +193,7 @@
                 </div>
                 <div class="meta">Philippines | Oct 2025 – Mar 2026</div>
                 <ul>
-                    <li>Secured sponsors and partners for KickSTART and TechSTART 2026, initiatives equipping DOST scholars nationwide with knowledge in modern technology.</li>
+                    <li>Helped secure sponsors and partners for KickSTART and TechSTART 2026, initiatives equipping DOST scholars nationwide with knowledge in modern technology.</li>
                 </ul>
             </div>
 
@@ -243,24 +251,23 @@ hamburger.addEventListener('click', () => {
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-    document.querySelectorAll(".read-more-btn").forEach(button => {
+    document.querySelectorAll(".read-more-btn")
+        .forEach(button => {
 
-        button.addEventListener("click", (e) => {
+            button.addEventListener("click", () => {
 
-            e.preventDefault();
-            e.stopPropagation();
+                const card = button.closest(".card");
 
-            const card = button.closest(".card");
+                card.classList.toggle("active");
 
-            card.classList.toggle("active");
+                button.textContent =
+                    card.classList.contains("active")
+                    ? "Read Less"
+                    : "Read More";
 
-            button.textContent =
-                card.classList.contains("active")
-                ? "Read Less"
-                : "Read More";
+            });
+
         });
-
-    });
 
 });
 </script>
