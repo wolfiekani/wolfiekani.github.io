@@ -109,11 +109,6 @@ nav a:hover, nav a.active {
     align-items: center;
 }
 
-@media (max-width: 768px) {
-    .nav-logo img {
-        height: 40px;
-    }
-}
 
 /* --- HERO SECTION --- */
 .hero {
@@ -737,57 +732,6 @@ h2::after {
     content: '';
 }
 
-.pdf-viewer-section {
-    display: none;
-}
-
-.pdf-viewer-section.has-pdf {
-    display: block;
-}
-
-.pdf-viewer-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 25px;
-    margin-bottom: 25px;
-}
-
-.pdf-viewer-header .section-desc {
-    margin-bottom: 0;
-}
-
-.pdf-open-link {
-    flex: 0 0 auto;
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 600;
-    padding: 10px 16px;
-    border: 1px solid rgba(56, 189, 248, 0.35);
-    border-radius: 999px;
-    background: rgba(56, 189, 248, 0.08);
-}
-
-.pdf-open-link:hover {
-    border-color: var(--accent);
-    box-shadow: 0 8px 18px rgba(0,0,0,0.22);
-}
-
-.pdf-frame-wrap {
-    height: 75vh;
-    min-height: 520px;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 15px;
-    background: var(--card-bg);
-}
-
-.pdf-frame-wrap iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-
 /* ===== HOBBY BENTO — 4:5 GRAPHIC DESIGN WITH EQUAL OTHER CARDS ===== */
 
 .hobby-bento {
@@ -1056,128 +1000,6 @@ h2::after {
     grid-row: 2;
     border-radius: 16px;
 }
-
-/* ===== RESPONSIVE ===== */
-
-@media (max-width: 768px) {
-    .hobby-bento {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
-        height: auto;
-        max-height: none;
-        min-height: auto;
-        gap: 12px;
-    }
-
-    .hobby-card {
-        height: auto;
-        min-height: 180px;
-    }
-
-    .graphic-design-card {
-    grid-column: 1 / 3 !important;
-    grid-row: auto !important;
-
-    aspect-ratio: 4 / 5;
-    width: 100%;
-
-    min-height: unset;
-    max-height: unset;
-    height: auto;
-}
-
-    .hobby-card:not(.graphic-design-card) {
-        grid-column: auto;
-        grid-row: auto;
-        min-height: 160px;
-        max-height: 220px;
-    }
-
-    .hobby-bento-3col {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
-        height: auto;
-        max-height: none;
-        min-height: auto;
-        gap: 12px;
-    }
-
-    .hobby-bento-3col .hobby-card {
-        height: auto;
-        min-height: 160px;
-    }
-
-    .hobby-bento-3col .hobby-card:nth-child(1) {
-        grid-column: 1 / 3;
-        grid-row: auto;
-        min-height: 220px;
-        max-height: 320px;
-    }
-
-    .hobby-bento-3col .hobby-card:nth-child(2) {
-        grid-column: 1;
-        grid-row: auto;
-    }
-
-    .hobby-bento-3col .hobby-card:nth-child(3) {
-        grid-column: 2;
-        grid-row: auto;
-    }
-
-    .hobby-content p {
-        max-height: 60px;
-        opacity: 1;
-    }
-}
-
-@media (max-width: 480px) {
-    .hobby-bento {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .graphic-design-card {
-    grid-column: 1 !important;
-
-    aspect-ratio: 4 / 5;
-    width: 100%;
-
-    min-height: unset;
-    max-height: unset;
-    height: auto;
-}
-
-    .hobby-card:not(.graphic-design-card) {
-        grid-column: 1;
-        min-height: 160px;
-        max-height: 220px;
-    }
-
-    .hobby-bento-3col {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .hobby-bento-3col .hobby-card {
-        min-height: 160px;
-        max-height: 220px;
-    }
-
-    .hobby-bento-3col .hobby-card:nth-child(1) {
-        grid-column: 1;
-        min-height: 200px;
-        max-height: 280px;
-    }
-
-    .hobby-bento-3col .hobby-card:nth-child(2) {
-        grid-column: 1;
-    }
-
-    .hobby-bento-3col .hobby-card:nth-child(3) {
-        grid-column: 1;
-    }
-}
-
 /* --- CONTACT SECTION --- */
 .contact-container {
     text-align: center;
@@ -1428,12 +1250,174 @@ footer {
     }
 }
 
-/* ==========================================
-   MOBILE RESPONSIVE IMPROVEMENTS
-   ========================================== */
+/* EXTRA SMALL PHONES */
+@media (max-width: 480px) {
 
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .sub-hero h1 {
+        font-size: 1.8rem;
+    }
+
+    nav h2 {
+        font-size: 1.2rem;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+    }
+
+    .collage-main,
+    .collage-project,
+    .collage-campus {
+        height: 180px;
+    }
+
+    .snapshot-feature img {
+        height: 180px;
+    }
+}
+
+/* ==========================================
+   HAMBURGER MENU
+========================================== */
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-main);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
 
+    .hobby-bento {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        height: auto;
+        max-height: none;
+        min-height: auto;
+        gap: 12px;
+    }
+
+    .hobby-card {
+        height: auto;
+        min-height: 180px;
+    }
+
+    .graphic-design-card {
+    grid-column: 1 / 3 !important;
+    grid-row: auto !important;
+
+    aspect-ratio: 4 / 5;
+    width: 100%;
+
+    min-height: unset;
+    max-height: unset;
+    height: auto;
+}
+
+    .hobby-card:not(.graphic-design-card) {
+        grid-column: auto;
+        grid-row: auto;
+        min-height: 160px;
+        max-height: 220px;
+    }
+
+    .hobby-bento-3col {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        height: auto;
+        max-height: none;
+        min-height: auto;
+        gap: 12px;
+    }
+
+    .hobby-bento-3col .hobby-card {
+        height: auto;
+        min-height: 160px;
+    }
+
+    .hobby-bento-3col .hobby-card:nth-child(1) {
+        grid-column: 1 / 3;
+        grid-row: auto;
+        min-height: 220px;
+        max-height: 320px;
+    }
+
+    .hobby-bento-3col .hobby-card:nth-child(2) {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .hobby-bento-3col .hobby-card:nth-child(3) {
+        grid-column: 2;
+        grid-row: auto;
+    }
+
+    .hobby-content p {
+        max-height: 60px;
+        opacity: 1;
+    }
+}
+    .nav-logo img {
+        height: 40px;
+    }
+
+    .hobby-bento {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .graphic-design-card {
+    grid-column: 1 !important;
+
+    aspect-ratio: 4 / 5;
+    width: 100%;
+
+    min-height: unset;
+    max-height: unset;
+    height: auto;
+}
+
+    .hobby-card:not(.graphic-design-card) {
+        grid-column: 1;
+        min-height: 160px;
+        max-height: 220px;
+    }
+
+    .hobby-bento-3col {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .hobby-bento-3col .hobby-card {
+        min-height: 160px;
+        max-height: 220px;
+    }
+
+    .hobby-bento-3col .hobby-card:nth-child(1) {
+        grid-column: 1;
+        min-height: 200px;
+        max-height: 280px;
+    }
+
+    .hobby-bento-3col .hobby-card:nth-child(2) {
+        grid-column: 1;
+    }
+
+    .hobby-bento-3col .hobby-card:nth-child(3) {
+        grid-column: 1;
+    }
     /* NAVBAR */
     nav {
     padding: 12px 20px;
@@ -1563,63 +1547,23 @@ footer {
         text-align: center;
         width: 100%;
     }
-    #hobbies-experience .hobby-card:active .hobby-content p {
+    #hobbies-experience .hobby-content p {
+        max-height: 0;
+        opacity: 0;
+    }
+
+    #hobbies-experience .hobby-card.active .hobby-content p {
         max-height: 120px;
         opacity: 1;
     }
-}
 
-
-/* EXTRA SMALL PHONES */
-@media (max-width: 480px) {
-
-    .hero-text h1 {
-        font-size: 2rem;
+    #hobbies-experience .hobby-card.active .hobby-photo {
+        transform: scale(1.07);
     }
 
-    .sub-hero h1 {
-        font-size: 1.8rem;
+    #hobbies-experience .hobby-card.active::after {
+        border-color: rgba(56, 189, 248, 0.6);
     }
-
-    nav h2 {
-        font-size: 1.2rem;
-    }
-
-    nav ul {
-        gap: 10px;
-    }
-
-    nav a {
-        font-size: 0.8rem;
-    }
-
-    .collage-main,
-    .collage-project,
-    .collage-campus {
-        height: 180px;
-    }
-
-    .snapshot-feature img {
-        height: 180px;
-    }
-}
-
-/* ==========================================
-   HAMBURGER MENU
-========================================== */
-
-.hamburger {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--text-main);
-    font-size: 1.8rem;
-    cursor: pointer;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-
     nav {
         display: flex;
         justify-content: space-between;
@@ -1653,7 +1597,6 @@ footer {
     nav ul.show {
         display: flex;
     }
-}
 
 @keyframes slideDown {
     from {

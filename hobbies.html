@@ -215,5 +215,30 @@ hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('show');
 });
 </script>
+
+<script>
+if (window.innerWidth <= 768) {
+
+    document.querySelectorAll('#hobbies-experience .hobby-card')
+        .forEach(card => {
+
+            card.addEventListener('click', () => {
+
+                document.querySelectorAll(
+                    '#hobbies-experience .hobby-card'
+                ).forEach(c => {
+                    if (c !== card) {
+                        c.classList.remove('active');
+                    }
+                });
+
+                card.classList.toggle('active');
+            });
+
+        });
+
+}
+</script>
+
 </body>
 </html>
