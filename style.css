@@ -1102,12 +1102,38 @@ footer {
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
+
 }
-/* Hide Read More button on desktop */
 .read-more-btn {
-    display: none;
+    margin-top: 12px;
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0;
+    font-size: 0.95rem;
 }
 
+   .project-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.card.active .project-details {
+    max-height: 1000px;
+}
+
+.read-more-btn {
+    margin-top: 12px;
+    background: none;
+    border: none;
+    color: var(--accent);
+    font-weight: 600;
+    cursor: pointer;
+}
+    
 @media (max-width: 1000px) {
     .home-hero-layout {
         grid-template-columns: 1fr;
@@ -1237,20 +1263,6 @@ footer {
         width: 56px;
         height: 56px;
         font-size: 0.72rem;
-    }
-
-    .pdf-viewer-header {
-        display: block;
-    }
-
-    .pdf-open-link {
-        display: inline-block;
-        margin-top: 18px;
-    }
-
-    .pdf-frame-wrap {
-        height: 70vh;
-        min-height: 420px;
     }
 }
 
@@ -1599,36 +1611,27 @@ footer {
         display: flex;
     }
 
-
     .project-details {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.35s ease;
-    }
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
 
-    .project-card.active .project-details {
-        max-height: 500px;
-    }
+.project-details.expanded {
+    max-height: 1000px;
+}
 
-    .read-more-btn {
-        display: inline-block;
-        margin-top: 12px;
-        background: none;
-        border: none;
-        color: var(--accent-color);
-        cursor: pointer;
-        font-weight: 600;
-        padding: 0;
-    }
-
-    .project-details {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.35s ease;
-    }
+.read-more-btn {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 12px;
+}
 
     .card.active .project-details {
-        max-height: 500px;
+        max-height: 1000px;
     }
 @keyframes slideDown {
     from {
